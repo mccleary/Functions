@@ -77,3 +77,24 @@ function Sandwich(bread, meat, vegetables) {
 }
 
 const mySandwich = new Sandwich('Wheat', ['turkey', 'ham'], ['tomatoes', 'lettuce', 'pickles']);
+
+
+
+
+
+
+// Example using instanceof
+// more info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof
+
+function Developer(name) {
+  this.name = name;
+}
+
+const dev = new Developer('Veronika');
+
+typeof dev
+// "object"          tells you that dev is an object
+
+//now use instanceof method to check if it’s an instanceof the Developer constructor function. ** make sure not to put () at the end of the function name. We are not invoking the Developer constructor function, just referring to it by name
+dev instanceof Developer;
+// true
