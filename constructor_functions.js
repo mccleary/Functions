@@ -43,3 +43,37 @@ console.log(engineer);
 
 console.log(programmer);
 // SoftwareDeveloper { favoriteLanguage: 'JavaScript' }
+
+
+
+
+
+
+//Example 5:
+// with Parameters
+function SoftwareDeveloper(name) {
+  this.favoriteLanguage = 'JavaScript';
+  this.name = name;
+}
+
+
+
+
+
+//Example 6:
+/*
+Now create a constructor function. Declare a
+`Sandwich` constructor function that takes three parameters:
+
+1. `bread` (string) - the type of bread for the sandwich (e.g. "Wheat")
+2. `meat` (array) - the meats to put on the sandwich
+   (e.g. `[]` for a vegetarian sandwich!)
+3. `vegetables` (array) - the vegetables to include in the sandwich
+*/
+function Sandwich(bread, meat, vegetables) {
+    this.bread = bread;
+    this.meat = meat;
+    this.vegetables = vegetables;
+}
+
+const mySandwich = new Sandwich('Wheat', ['turkey', 'ham'], ['tomatoes', 'lettuce', 'pickles']);
