@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 
 // Contructor Functions (functions that return objects)
-// More info:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
+// More info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
 
 
 //Example 1:
