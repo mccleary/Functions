@@ -131,4 +131,105 @@ const Richard = {
   }
 };
 Richard.introduce.call(Andrew);
-// 'Hello there! I'm Andrew.'
+// Hello there! I'm Andrew.
+
+
+
+
+// apply() Example 6:
+const andrew = {
+  name: 'Andrew'
+};
+
+function introduce(language) {
+  console.log(`I'm ${this.name} and my favorite programming language is ${language}.`);
+}
+
+// Write an expression that uses the call() method to produce the message: 'I'm Andrew and my favorite programming language is JavaScript.'
+
+introduce.call(andrew, 'JavaScript');
+
+
+
+
+
+//Callbacks and this
+function invokeTwice(cb) {
+   cb();
+   cb();
+}
+
+const dog = {
+  age: 5,
+  growOneYear: function () {
+    this.age += 1;
+  }
+};
+
+dog.growOneYear();
+// (this works as expected)
+
+dog.age;
+// 6
+
+invokeTwice(dog.growOneYear);
+// undefined
+
+dog.age;
+// 6
+
+//One way to resolve this issue is to use an anonymous closure to close over the dog object:
+invokeTwice(function () {
+  dog.growOneYear();
+});
+
+dog.age;
+// 7
+
+//better to use bind()
+
+
+
+// ------------------------------------------------------------- //
+
+// bind()
+
+//Similar to call() and apply(), the bind() method allows us to directly define a value for this. bind() is a method that is also called _on_ a function, but unlike call() or apply(), which both invoke the function right away -- bind() returns a new function that, when called, has this set to the value we give it.
+
+// bind() Example 1:
+function invokeTwice(cb) {
+   cb();
+   cb();
+}
+
+const dog = {
+  age: 5,
+  growOneYear: function () {
+    this.age += 1;
+  }
+};
+
+const myGrow = dog.growOneYear.bind(dog);
+
+dog.age;
+// 7
+
+
+
+
+
+// bind() Example 2:
+const driver = {
+  name: 'Danica',
+  displayName: function () {
+    console.log(`Name: ${this.name}`);
+  }
+};
+
+const car = {
+  name: 'Fusion'
+};
+
+// Write an expression using bind() that allows us to "borrow" the displayName() method from driver for the car object to use
+
+driver.displayName.bind(car);
